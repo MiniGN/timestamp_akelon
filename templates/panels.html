@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <h1 id="focus_date" data-focus_date={{ focus_date|date:'Y-m-d' }} class="text-center hidden"> задачи на {{ focus_date|date:'d.m.Y' }}</h1>
+        <div class="col-lg-6">
+            {% include 'panels/project_panel.html' %}
+        </div>
+        <div class="col-lg-6">
+            {% include 'panels/common_panel.html' %}
+        </div>
+{#        <div class="col-lg-3">#}
+{#            {% include 'panels/service_panel.html' %}#}
+{#        </div>#}
+        <div class="col-lg-6">
+            {% include 'panels/quartal_panel.html' %}
+        </div>
+    </div>
+</div>

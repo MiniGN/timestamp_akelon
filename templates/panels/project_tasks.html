@@ -1,0 +1,63 @@
+{# Проектные работы #}
+{#    ПРОЕКТЫ           #}
+{% for project in project_tasks.projects %}
+    <tr class="treegrid-p{{ project.id }} project">
+        <td>{{ project.name }}</td>
+        <td></td>
+    </tr>
+    {#    ЭТАПЫ     #}
+    {% for stage in project.stages %}
+        <tr class="treegrid-p{{ project.id }}s{{ stage.id }} treegrid-parent-p{{ project.id }} stage">
+            <td>{{ stage.name }}</td>
+            <td></td>
+        </tr>
+        {#    Задачи     #}
+        {% for task in stage.tasks %}
+           <tr class="treegrid-p{{ project.id }}s{{ stage.id }}t{{ task.id }} treegrid-parent-p{{ project.id }}s{{ stage.id }}">
+            <td>
+                <span class="task" id="p{{ project.id }}s{{ stage.id }}t{{ task.id }}">{{ task.name }}</span>
+                <span class="glyphicon glyphicon-plus-sign" style="color: transparent"></span>
+            </td>
+        </tr>
+            {#  Отметки  #}
+        {% for ts in task.ts %}
+            <tr class="treegrid treegrid-parent-p{{ project.id }}s{{ stage.id }}t{{ task.id }}">
+                <td>
+                    {% include 'panels/ts-history.html' %}
+                </td>
+            </tr>
+        {% endfor %}
+        {#     Новое поле     #}
+        <tr class="hidden for-new-edit" id="p{{ project.id }}s{{ stage.id }}t{{ task.id }}">
+            <td>
+                {% include 'panels/ts-input.html' %}
+        </tr>
+        {% endfor %}
+
+{#                {% for task in stage.tasks %}#}
+{#            <tr class="treegrid-p{{ project.id }}s{{ stage.id }}t{{ task.id }} treegrid-parent-p{{ project.id }}s{{ stage.id }} task">#}
+{#                <td><span>{{ task.name }}</span></td>#}
+{#                <td>#}
+{#                    <ul>#}
+{#                        {% for ts in task.ts %}#}
+{#                            <li>#}
+{#                                <span class="ts-status-{{ ts.status.name }}"><strong>{{ ts.hours }} ч. </strong>{{ ts.desc }}</span>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{##}
+{#                        <li>#}
+{#                            <a href="#" id="address" class="edit-timestamp" data-type="address"#}
+{#                               data-pk="p{{ project.id }}s{{ stage.id }}t{{ task.id }}"#}
+{#                               data-title="Please, fill address"></a>#}
+{#                            <span class="glyphicon glyphicon-send"#}
+{#                                  id="p{{ project.id }}s{{ stage.id }}t{{ task.id }}" data-task_id="{{ task.id }}"#}
+{#                                  data-task_type="{{ task.task_type }}"></span>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+
+
+    {% endfor %}
+{% endfor %}

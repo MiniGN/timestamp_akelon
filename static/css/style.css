@@ -1,0 +1,235 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+
+}
+
+.project {
+    color: #3F63DB;
+    font-size: 16px;
+}
+
+.project > td {
+    padding-left: 0px !important;
+}
+
+.stage {
+    /*color: dodgerblue;*/
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.stage > td {
+    padding-left: 0px !important;
+}
+
+.task{
+    font-size: 14px;
+    border-bottom: 1px dotted black;
+    box-decoration-break: clone;
+}
+.task:hover{
+    color:red;
+    border-bottom: 1px dotted red;
+}
+
+.task:hover + .glyphicon{
+    color:red !important;
+}
+
+.tree>tbody>tr{
+    border: none;
+}
+.tree>tbody>tr>td{
+    border:none;
+    padding: 4px;
+}
+
+
+
+.date-arrow{
+    font-size:20px;
+}
+.ts-header {
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #5C258D; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #4389A2, #5C258D); !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to left, #4389A2, #5C258D); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+    background: -webkit-linear-gradient(to right, #6885E9, #764AA1); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #6885E9, #764AA1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Cuprum', sans-serif;
+}
+.month-label {
+    style: "width:100%";
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+.date-bar{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+
+}
+
+.date-cell {
+    width: 50px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 13px;
+    display: inline-block;
+    margin: 4px 4px;
+    color: white;
+    border-radius: 50%;
+    position: relative;
+    font-size: 30px;
+}
+
+.date-selectdate {
+    background-color: #C19CD9;
+    color:white !important;
+}
+
+.date-cell:not(.date-selectdate):hover {
+    /*background-color: #FFE7B3;*/
+    color:#C19CD9;
+}
+
+.date-isWeekend {
+    color: SALMON;
+}
+
+.date-text {
+    margin-top:-7px;
+    margin-left:-2px;
+
+}
+
+.date-label {
+    position: absolute;
+    border: none;
+    display: inline-block;
+}
+.date-label-bar{
+    width:23px;
+    height: 2px;
+    bottom:5px;
+    left:13px;
+}
+.date-label-eight {
+    background-color: springgreen;
+}
+.date-label-wait {
+    background-color: #FBC01A;
+}
+.date-label-reject {
+    top:5px;
+    left:22px;
+    background-color: salmon;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+}
+.date-label-overtime {
+    background-color: salmon;
+}
+
+
+.user-dropdown {
+    position: absolute; /* Абсолютное позиционирование */
+    right: 40px;
+    top: 10px;
+    line-height: 1px;
+}
+
+/*Внесенные отметки*/
+.ts-status{
+    font-size:13px;
+}
+.ts-status>.label{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+
+.ts-status-accepted {
+    color:#228B22;
+
+}
+.ts-status-accepted>.label {
+    background-color: #228B22;
+
+}
+.ts-status-rejected {
+
+    color:#e01212;
+}
+
+.ts-status-rejected>.label {
+    background-color: #e01212;
+}
+
+.ts-status-inqueue{
+
+    color:#ce7305;
+}
+
+.ts-status-inqueue>.label{
+        background-color: #ce7305;
+}
+
+
+
+/*Поля для ввода отметки*/
+.ts-input{
+    width: 60px !important;
+    font-size: 12px;
+    padding: 0px 4px;
+    height: 22px;
+}
+.desc-input{
+    padding: 0px 4px;
+    height: 22px;
+    font-size: 12px;
+    width: 250px !important;
+}
+.btn-input{
+    color:#ccc;
+    padding: 0px 10px;
+    background-color: white;
+    border-color: #ccc;
+}
+.btn-input:hover{
+    color:#66afe9;
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+}
+
+/*Настройки панелей*/
+.panels{
+    padding-top: 15px;
+}
+
+.panel-body{
+    background-color: WHITESMOKE;
+}
+
+.panel-project{
+    border-color: #D5CDFB;
+}
+.panel-project>.panel-heading {
+    color: #764AA1;
+    background-color: #D5CDFB;
+    border-color: #D5CDFB;
+}
+.panel-project>.panel-heading>.panel-title {
+    font-weight: bold;
+    font-size:18px;
+}

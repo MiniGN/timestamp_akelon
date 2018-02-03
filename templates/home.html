@@ -1,0 +1,72 @@
+{% load static %}
+ {% load material_form %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimum Setup</title>
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <!-- bootstrap-calendar -->
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <!-- TreeGrid-->
+    <link rel="stylesheet" href="{% static 'css/jquery.treegrid.css' %}">
+    <!-- x-editable -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <link href="{% static 'css/xeditable-complex.css' %}">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700&amp;subset=cyrillic" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+{% include 'navbar.html' %}
+<div id="panels" class="panels">
+{% include 'panels.html' %}
+</div>
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+<!-- bootstrap-calendar -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+
+<!-- TreeGrid-->
+<script type="text/javascript" src="{% static 'js/jquery.treegrid.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.treegrid.bootstrap3.js' %}"></script>
+<!-- x-editable -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<script type="text/javascript" src="{% static 'js/xeditable-comples.js' %}"></script>
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+<script type="text/javascript">
+    var calendar = $("#calendar").calendar(
+        {
+            tmpl_path: "{% static '/tmpls/' %}",
+            events_source: function () {
+                return [];
+            }
+        });
+</script>
+</body>
+</html>

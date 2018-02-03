@@ -1,0 +1,50 @@
+{% load filters %}
+<div class="page-header ts-header">
+    <div class="text-center month-label">
+        <span class="glyphicon glyphicon-menu-left date-arrow" data-nav="left"
+              data-month={{ focus_month }} data-year={{ focus_year }}></span>
+        <span> {{ focus_month|mon_to_text }} {{ focus_year }}</span>
+        <span class="glyphicon glyphicon-menu-right date-arrow" data-nav="right"
+              data-month={{ focus_month }} data-year={{ focus_year }}></span>
+    </div>
+
+
+    {#    <div class="dropdown user-dropdown">#}
+    {#        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"#}
+    {#                aria-haspopup="true" aria-expanded="true">#}
+    {#            Пользователь#}
+    {#            <span class="caret"></span>#}
+    {#        </button>#}
+    {#        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">#}
+    {#            {% for user in users %}#}
+    {#                <li><a href="#">{{ user.username  }}</a></li>#}
+    {#            {% endfor %}#}
+    {##}
+    {#        </ul>#}
+    {#    </div>#}
+
+    <div class="date-bar">
+        {% for date_item in month.dates %}
+            <div data-date={{ date_item.date|date:"Y-m-d" }}  class="date-cell{% if date_item.isWeekend %}
+                 date-isWeekend{% endif %}">
+                <div class="date-text"><span>{{ date_item.date|date:"d" }}</span></div>
+
+                <div>
+                    {% if date_item.label_eight %}
+                        <div class="date-label date-label-eight date-label-bar" title="принято 8 часов"></div>
+                    {% endif %}
+                    {% if date_item.label_wait %}
+                        <div class="date-label date-label-wait date-label-bar" title="есть непринятые отметки"></div>
+                    {% endif %}
+                    {% if date_item.label_reject %}
+                       <div class="date-label date-label-reject" title="есть отклоненная отметка"></div>
+                    {% endif %}
+                    {% if date_item.label_overtime %}
+                       <div class="date-label date-label-overtime date-label-bar" title="есть переработка"></div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+
+</div>
+</div>

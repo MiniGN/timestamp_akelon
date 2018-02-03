@@ -1,0 +1,18 @@
+<form class="form-inline" style="display:inline-block;" method="POST" action="" data-task_id="{{ task.id }}" data-task_type="{{ task.task_type }}">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="number" step="0.25" maxlength="3" size="3" max="24" class="form-control ts-input">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control desc-input" id="desc">
+    </div>
+
+    <button type="submit" class="btn btn-input">
+        <i class="glyphicon glyphicon-arrow-right" style="margin-top:2px"></i>
+    </button>
+{##}
+{#    <span type="submit" class="glyphicon glyphicon-send btn-input"#}
+{#                                      id="s{{ stage.id }}t{{ task.id }}" data-task_id="{{ task.id }}"#}
+{#                                      data-task_type="{{ task.task_type }}"></span>#}
+
+</form>

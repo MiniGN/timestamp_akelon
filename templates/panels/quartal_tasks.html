@@ -1,0 +1,23 @@
+{# Квартальные задачи #}
+{#    Задачи     #}
+{% for task in quartal_tasks.tasks %}
+    <tr class="treegrid-t{{ task.id }}">
+        <td>
+            <span class="task" id="t{{ task.id }}">{{ task.name }}</span>
+            <span class="glyphicon glyphicon-plus-sign" style="color: transparent"></span>
+        </td>
+    </tr>
+        {#  Отметки  #}
+        {% for ts in task.ts %}
+            <tr class="treegrid treegrid-parent-t{{ task.id }}">
+                <td>
+                    {% include 'panels/ts-history.html' %}
+                </td>
+            </tr>
+        {% endfor %}
+        {#     Новое поле     #}
+        <tr class="hidden for-new-edit" id="t{{ task.id }}">
+            <td>
+                {% include 'panels/ts-input.html' %}
+        </tr>
+{% endfor %}

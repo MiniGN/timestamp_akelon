@@ -1,0 +1,31 @@
+{#Постоянные работы#}
+
+{#  Группы  #}
+{% for stage in common_tasks.stages %}
+    <tr class="treegrid-s{{ stage.id }} project">
+        <td>{{ stage.name }}</td>
+    </tr>
+    {#  Задачи  #}
+    {% for task in stage.tasks %}
+        <tr class="treegrid-s{{ stage.id }}t{{ task.id }} treegrid-parent-s{{ stage.id }}">
+            <td>
+                <span class="task" id="s{{ stage.id }}t{{ task.id }}">{{ task.name }}</span>
+                <span class="glyphicon glyphicon-plus-sign" style="color: transparent"></span>
+            </td>
+        </tr>
+        {#  Отметки  #}
+        {% for ts in task.ts %}
+            <tr class="treegrid treegrid-parent-s{{ stage.id }}t{{ task.id }}">
+                <td>
+                    {% include 'panels/ts-history.html' %}
+                </td>
+            </tr>
+        {% endfor %}
+        {#     Новое поле     #}
+        <tr class="hidden for-new-edit" id="s{{ stage.id }}t{{ task.id }}">
+            <td>
+                {% include 'panels/ts-input.html' %}
+        </tr>
+    {% endfor %}
+{% endfor %}
+
